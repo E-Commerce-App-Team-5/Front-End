@@ -10,7 +10,7 @@ module.exports = {
   },
     extend: {
       colors : {
-        "hitam" : "#000000",
+        "base-green" : "#122715",
         "base" : "#69C665",
         "light-green" : "#F8FFFA",
         "search&text" : "#BFBFBF",
