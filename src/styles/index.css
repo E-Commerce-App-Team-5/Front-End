@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  background: #f1fcf4;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -14,6 +18,5 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
-  background: #F1FCF4;
+  font-family: "Quicksand", sans-serif;
 }

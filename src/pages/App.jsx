@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import '../styles/Index.css';
+import { useState } from "react";
+import "../styles/index.css";
 
 function App() {
-
   return (
     <>
-    <h1>HealtyMart</h1>
+      <h1 className="text-base">HealtyMart</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
