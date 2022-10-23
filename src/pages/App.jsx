@@ -1,6 +1,7 @@
 import React from "react";
 import rectangle from "../assets/Rectangle-1.png";
 import imghero from "../assets/Hreo-img.png";
+import { CardsCheckout, CardsSubtotal } from "../components/CardsCart";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             className="h-[8rem] md:h-[20rem] lg:h-[25rem] "
           />
         </div>
+
       </div>
     </div>
   );
