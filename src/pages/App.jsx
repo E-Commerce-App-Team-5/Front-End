@@ -1,10 +1,15 @@
 import React from "react";
+import { WithRouter } from "../utils/Navigations";
+
 import rectangle from "../assets/Rectangle-1.png";
 import imghero from "../assets/Hreo-img.png";
-import { CardsCheckout, CardsSubtotal } from "../components/CardsCart";
+
+import Layout from "../components/Layout";
 
 function App() {
   return (
+    <>
+    <Layout/>
     <div className="w-full h-[26rem] ">
       <div className="w-full h-full">
         <div className="absolute w-full h-[10rem] md:h-[23rem] lg:h-[26rem] md:w-full sm:w-full bg-hero z-[5]"></div>
@@ -31,7 +36,8 @@ function App() {
 
       </div>
     </div>
+    </>
   );
 }
 
-export default App;
+export default WithRouter(App);

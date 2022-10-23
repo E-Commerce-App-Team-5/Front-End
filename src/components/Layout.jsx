@@ -1,7 +1,6 @@
 import { BsCart3 } from "react-icons/bs";
 import { SlMagnifier } from "react-icons/sl";
 import { BLoggin, ALoggin } from "./IsLoggedIn";
-import CardsProduct from "../components/CardsProduct";
 
 import React from "react";
 import "../styles/index.css";
@@ -39,7 +38,6 @@ const Navbar = (props) => {
           <div className="flex   ">{isLoggin ? <BLoggin /> : <ALoggin />}</div>
         </div>
       </nav>
-      <CardsProduct />
     </div>
   );
 };
