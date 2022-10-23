@@ -1,32 +1,33 @@
 import React from "react";
 import { BsCart3 } from "react-icons/bs";
-
+import { ButtonCart } from "../components/CustomButtons";
+import potatos from "../assets/potatos.png";
 const CardsProduct = (props) => {
   return (
-    <div className="md:w-[220px]  md:h-[300px] rounded-sm border flex justify-center shadow-2xl bg-white">
-      <div className="items-center">
+    <div className=" md:w-[15rem] md:h-[19.5rem] rounded-lg border flex justify-center box-shadow-card  bg-white">
+      <div className="items-center p-2">
         <img
-          className="md:w-[170px] md:h-[160px] mt-3"
-          src="https://feedthemwisely.com/wp-content/uploads/2018/02/optimized-veggie-header-e1519835006327.jpeg"
+          className="md:w-[12rem] md:h-[9rem] mt-3 object-contain p-1 rounded-lg "
+          src="https://cdn.pixabay.com/photo/2016/03/05/19/02/appetite-1238251_1280.jpg"
           alt="saya"
         />
-        <p className="text-black font-semibold mt-1 text-[20px]">
-          Potatos 1 kg
+        <p className="text-base-green font-semibold mt-1 text-[18px] lg:text-[20px]">
+          Broccoli 1 kg
         </p>
 
-        <div className="mt-5">
-          <p className="font-semibold text-text-grey text-[10px]">
-            By <span className="text-text-green "> Toko Sehat Alami</span>
+        <div className="mt-1">
+          <p className=" font-medium  text-text-grey text-[12px] mb-2">
+            By
+            <span className="text-text-green ">Toko Sehat Alami</span>
           </p>
-          <p className="font-semibold text-text-grey text-[10px]">
-            Stok<span className="text-text-green "> 3</span>
+          <p className="font-medium  text-text-grey text-[12px]">
+            Stok<span className="text-text-green font-medium"> 3</span>
           </p>
-          <div className="flex  justify-between">
-            <p className="text-black text-[15px]">Rp.40.000</p>
-            <button className="bg-base w-[65px] text-white text-[9px] rounded-sm items-center flex justify-center gap-1">
-              <BsCart3 />
-              Add
-            </button>
+          <div className="flex  justify-between items-center mt-1 ">
+            <p className="text-base-green text-xs lg:text-[16px] font-semibold ">
+              Rp 40.000
+            </p>
+            <ButtonCart />
           </div>
         </div>
       </div>
