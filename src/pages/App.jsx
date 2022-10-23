@@ -1,16 +1,7 @@
-// import InputPrimary from "../components/CustomInput";
-// import Profiles from "../components/CardsProfiles";
-// // import { useState } from "react";
-// // import "../styles/index.css";
-// import {
-//   ButtonPrimary,
-//   ButtonSecondary,
-//   ButtonCart,
-//   ButtonCheckout,
-// } from "../components/CustomButtons";
 import React from "react";
 import rectangle from "../assets/Rectangle-1.png";
 import imghero from "../assets/Hreo-img.png";
+
 function App() {
   return (
     <div className="w-full h-[26rem] ">
