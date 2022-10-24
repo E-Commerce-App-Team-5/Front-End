@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-
+    isLoggedin: false,
 };
 
 const sliceState = createSlice ({
@@ -9,7 +9,10 @@ const sliceState = createSlice ({
     initialState: initialState,
     reducer: {
         handleAuth : (state, action) => {
-
+            state.isLoggedin = action.payload;
+        },
+        handleUser: (state, action) => {
+            state.Users = action.payload;
         },
     },
 });
@@ -18,6 +21,5 @@ const reducer = {
     state: sliceState.reducer,
 };
 
-export const { handleAuth } = sliceState.actions;
+export const { handleAuth, handleUser } = sliceState.actions;
 export default reducer;
-
