@@ -7,7 +7,8 @@ const Navbar = ({ children }) => {
   // let isLoggin = false;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full sticky top-0">
+
       <nav className=" flex  items-center  w-full bg-putih  ">
         <div className="container flex justify-between  py-2 md:py-4 ">
           <p className="text-base-green text-sm md:text-2xl font-bold font-font-quick">

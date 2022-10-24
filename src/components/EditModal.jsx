@@ -14,7 +14,6 @@ function EditModal() {
             alt="bayam"
           />
           <div className="flex justify-between w-full">
-            <p></p>
             <label className="cursor-pointer font-semibold " for="pic">
               Edit Photo
             </label>
