@@ -2,7 +2,7 @@ import React from "react";
 import { BsCart3 } from "react-icons/bs";
 const ButtonPrimary = (props) => {
   return (
-    <button className="w-[23rem] h-[3.3rem] bg-base font-medium text-xl rounded-lg text-putih">
+    <button className="w-[22rem] h-[3.3rem] bg-base font-medium text-xl rounded-lg text-putih">
       {props.label}
     </button>
   );
