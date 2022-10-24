@@ -1,4 +1,3 @@
-import { BsCart3 } from "react-icons/bs";
 import { SlMagnifier } from "react-icons/sl";
 import { BLoggin, ALoggin } from "./IsLoggedIn";
 
@@ -9,10 +8,12 @@ const Navbar = ({ children }) => {
   let isLoggin = true;
   // let isLoggin = false;
   return (
+
     <div className="w-full h-full">
       <nav className=" flex  items-center  w-full bg-putih  ">
         <div className="container flex justify-between  py-2 md:py-4 ">
           <p className="text-base-green text-sm md:text-2xl font-bold font-font-quick">
+
             HealtyMart
           </p>
           <div
@@ -33,7 +34,9 @@ const Navbar = ({ children }) => {
           <div className="flex">{isLoggin ? <BLoggin /> : <ALoggin />}</div>
         </div>
       </nav>
+
       <div className="w-full h-full overflow-auto ">{children}</div>
+
     </div>
   );
 };

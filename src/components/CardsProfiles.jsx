@@ -13,9 +13,9 @@ const Profiles = () => {
         earthmarket@gmail.com
       </p>
       <div className="flex justify-between items-center">
-        <ButtonSecondary />
+        <ButtonSecondary label="change profile" />
 
-        <MdLogout size={25} className="text-base-green" />
+        <MdLogout size={25} className="text-base-green cursor-pointer" />
       </div>
     </div>
   );
