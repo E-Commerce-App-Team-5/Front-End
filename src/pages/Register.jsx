@@ -4,12 +4,12 @@ import { ButtonPrimary } from "../components/CustomButtons";
 import gbrEcommerce from "../assets/Ecommerce-checkout.png";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState(""); 
+  const [username, setUsername] = useState("");
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
@@ -18,29 +18,29 @@ const Register = () => {
     } else {
       setDisabled(true);
     }
-  }, [username, email, password,]);
+  }, [username, email, password]);
 
   const handleRegister = async (e) => {
     e.preventDefault(false);
-      const body = {
+    const body = {
       username,
       email,
       password,
-    }; 
+    };
     axios
-      .post (`https://ecommerce-alta.online/users`, {
+      .post(`https://ecommerce-alta.online/users`, {
         username: username,
         email: email,
         password: password,
       })
       .then((result) => {
-        if(result?.status === 201){
+        if (result?.status === 201) {
           Swal.fire({
             position: "center",
             icon: "success",
             title: "Register Success!",
             showConfirmButton: true,
-        });            
+          });
         }
         dispatch(handleAuth(true));
       })
@@ -55,10 +55,10 @@ const Register = () => {
             icon: "error",
             text: "Username atau password sudah terdaftar",
           });
-        } 
+        }
       })
       .finally();
-    };
+  };
 
   return (
     <div className="flex justify-between ">
@@ -69,7 +69,10 @@ const Register = () => {
         <h1 className="text-4xl font-bold text-base-green mb-7">
           Create your account
         </h1>
-        <form className="flex flex-col gap-4 min-w-[40%] items-center" onSubmit={(e) => handleRegister(e)}>
+        <form
+          className="flex flex-col gap-4 min-w-[40%] items-center"
+          onSubmit={(e) => handleRegister(e)}
+        >
           <div>
             <p className="mb-1 text-lg text-base-green font-semibold">Email</p>
             <InputPrimary
@@ -100,20 +103,22 @@ const Register = () => {
               Password
             </p>
             <InputPrimary
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            id="input-password"
-            type="password"
-            placeholder="password"
-            name="username"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              id="input-password"
+              type="password"
+              placeholder="password"
+              name="username"
             />
           </div>
-          <ButtonPrimary id="input-submit" label="Sign Up"/>
+          <ButtonPrimary id="input-submit" label="Sign Up" />
           <p className="text-[16px] text-base-green mt-1 ">
             Already have an account ?
-            <span className="text-base font-semibold cursor-pointer">
-              Sign in
-            </span>
+            <Link to="/">
+              <span className="text-base font-semibold cursor-pointer">
+                Sign in
+              </span>
+            </Link>
           </p>
         </form>
       </div>
