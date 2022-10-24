@@ -1,7 +1,5 @@
-import { BsCart3 } from "react-icons/bs";
 import { SlMagnifier } from "react-icons/sl";
 import { BLoggin, ALoggin } from "./IsLoggedIn";
-import CardsProduct from "../components/CardsProduct";
 
 import React from "react";
 import "../styles/index.css";
@@ -10,10 +8,10 @@ const Navbar = (props) => {
   let isLoggin = true;
   // let isLoggin = false;
   return (
-    <div>
+    <div className=" sticky top-0 ">
       <nav
         className="flex justify-center w-full bg-putih px-1 md:px-5
-     md:h-[60px] "
+      h-[60px]"
       >
         <div className="flex justify-around w-full  py-1  items-center">
           <p className="text-base-green text-[10px] md:text-2xl  md:w-[200px] font-quick font-semibold ">
@@ -39,7 +37,6 @@ const Navbar = (props) => {
           <div className="flex   ">{isLoggin ? <BLoggin /> : <ALoggin />}</div>
         </div>
       </nav>
-      <CardsProduct />
     </div>
   );
 };

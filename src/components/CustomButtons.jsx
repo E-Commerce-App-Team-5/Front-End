@@ -9,8 +9,8 @@ const ButtonPrimary = (props) => {
 };
 const ButtonSecondary = (props) => {
   return (
-    <button className=" w-[9rem] h-[2.8rem] bg-base font-medium rounded-lg text-putih text-[16px]">
-      {props.label}change profile
+    <button className="w-[3rem] h-[1.2rem] md:w-[9rem] md:h-[2.8rem] bg-base font-medium rounded-sm md:rounded-lg text-putih md:text-[16px] text-[5px]">
+      {props.label}
     </button>
   );
 };
