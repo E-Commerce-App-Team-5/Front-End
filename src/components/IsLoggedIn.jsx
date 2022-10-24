@@ -4,10 +4,10 @@ const BLoggin = () => {
   return (
     <div className="flex items-center justify-end   md:ml-0 ml-1 w-16  md:w-52 ">
       <BsCart3
-        className="md:w-14 md:h-[28px] w-4 md:-mr-7 h-[20px] "
+        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] "
         style={{ color: "#69C665" }}
       />
-      <button className="flex justify-center ml-1 rounded-md w-[30px] md:h-[28px]  h-[17px]  md:w-[70px] md:ml-7 bg-base text-white text-[8px] md:text-[1rem]  items-center md:rounded-md">
+      <button className="flex justify-center ml-1 rounded-sm w-[30px] h-[17px] md:h-[30px] md:w-[70px] md:ml-7 bg-base text-white text-[8px] md:text-[14px]  items-center lg:rounded-md">
         Login
       </button>
     </div>

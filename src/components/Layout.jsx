@@ -4,39 +4,39 @@ import { BLoggin, ALoggin } from "./IsLoggedIn";
 import React from "react";
 import "../styles/index.css";
 
-const Navbar = (props) => {
+const Navbar = ({ children }) => {
   let isLoggin = true;
   // let isLoggin = false;
   return (
-    <div className=" sticky top-0 ">
-      <nav
-        className="flex justify-center w-full bg-putih px-1 md:px-5
-      h-[60px]"
-      >
-        <div className="flex justify-around w-full  py-1  items-center">
-          <p className="text-base-green text-[10px] md:text-2xl  md:w-[200px] font-quick font-semibold ">
+
+    <div className="w-full h-full">
+      <nav className=" flex  items-center  w-full bg-putih  ">
+        <div className="container flex justify-between  py-2 md:py-4 ">
+          <p className="text-base-green text-sm md:text-2xl font-bold font-font-quick">
+
             HealtyMart
           </p>
-
           <div
-            className="flex md:px-5  px-2 md:w-[350px] w-[100px] md:h-[35px] items-center md:h-9 justify-between  rounded-sm md:rounded-md"
+            className="flex md:px-3 px-2  w-[10rem] h-[1.8rem] md:w-[350px]  md:h-[2.4rem] items-center  justify-between  rounded-md "
             style={{ backgroundColor: "#E4E4E4" }}
           >
             <input
               style={{ backgroundColor: "#E4E4E4" }}
-              className="  placeholder:text-[10px]  md:placeholder:text-lg w-[80px] md:w-[300px] text-xs md:text-3xl rounded-sm   md:h-[35px]"
+              className="h-[1.8rem]  w-[10rem] text-xs md:text-sm rounded-md font-light bg-putih  text-search&text p-3 border focus:outline-none  md:w-[300px]  md:h-[2.4rem]"
               id="search"
               type="text"
               placeholder="search apa ya"
             />
             <button>
-              <SlMagnifier className="md:w-6  w-[10px]  " />
+              <SlMagnifier className="md:w-6 w-[10px]  " />
             </button>
           </div>
-
-          <div className="flex   ">{isLoggin ? <BLoggin /> : <ALoggin />}</div>
+          <div className="flex">{isLoggin ? <BLoggin /> : <ALoggin />}</div>
         </div>
       </nav>
+
+      <div className="w-full h-full overflow-auto ">{children}</div>
+
     </div>
   );
 };
