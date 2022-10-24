@@ -13,9 +13,9 @@ export default function Profiles() {
         <div className="flex justify-between  md:gap-7 w-full ">
           <CardsProfiles />
 
-          <div className="flex flex-col space-y-4 md:mb-10">
+          <div className="flex flex-col space-y-7 md:mb-10">
             <UploadCard />
-            <UploadedProducts />
+            <UploadedProducts className="mt-[4rem]" />
           </div>
         </div>
       </div>

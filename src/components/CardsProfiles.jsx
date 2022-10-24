@@ -1,6 +1,7 @@
 import React from "react";
 import { ButtonSecondary } from "../components/CustomButtons";
 import { MdLogout } from "react-icons/md";
+import EditModal from "../components/EditModal";
 const Profiles = () => {
   return (
     <div className="w-[30%] h-[30rem] p-5 bg-white rounded-xl  shadow-xl">
@@ -13,9 +14,26 @@ const Profiles = () => {
         earthmarket@gmail.com
       </p>
       <div className="flex justify-between items-center">
-        <ButtonSecondary label="change profile" />
-
+        <label
+          htmlFor="modal-edit"
+          className=" w-[3rem]  cursor-pointer flex justify-center items-center h-[1.2rem] md:w-[9rem] md:h-[2.8rem] bg-base font-medium rounded-sm md:rounded-lg text-putih md:text-[16px] text-[5px] all-btn"
+        >
+          Change Profile
+        </label>
         <MdLogout size={25} className="text-base-green cursor-pointer" />
+      </div>
+
+      <input type="checkbox" id="modal-edit" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative bg-white h-[40rem] w-[35%]">
+          <label
+            htmlFor="modal-edit"
+            className="cursor-pointer btn-sm  absolute right-2 top-2 bg-white border-white"
+          >
+            ✕
+          </label>
+          <EditModal />
+        </div>
       </div>
     </div>
   );
