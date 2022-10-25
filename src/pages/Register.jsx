@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import InputPrimary from "../components/CustomInput";
+import { Link } from "react-router-dom";
 import { ButtonPrimary } from "../components/CustomButtons";
 import gbrEcommerce from "../assets/Ecommerce-checkout.png";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import InputPrimary from "../components/CustomInput";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +22,27 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault(false);
+
+    if (username.length == 0 || email.length == 0 || password.length == 0) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Data cannot be empty !",
+        showConfirmButton: true,
+      });
+      return
+    }
+
+    if (username.length < 8) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Username must be longer than 8 characters !",
+        showConfirmButton: true,
+      });
+      return
+    }
+
     const body = {
       username,
       email,
@@ -38,22 +59,21 @@ const Register = () => {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Register Success!",
+            title: "Register successful ! Please Login !",
             showConfirmButton: true,
           });
         }
-        dispatch(handleAuth(true));
       })
       .catch((error) => {
         if (error.response?.status === 400) {
           Swal.fire({
             icon: "error",
-            text: "Username atau password sudah terdaftar",
+            text: "Username or password is already registered !",
           });
         } else if (error.response?.status === 500) {
           Swal.fire({
             icon: "error",
-            text: "Username atau password sudah terdaftar",
+            text: "Username or password is already registered !",
           });
         }
       })
@@ -80,7 +100,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
               id="input-email"
               type="email"
-              placeholder="contoh@gmail.com"
+              placeholder="example@mail.com"
               name="email"
             />
           </div>
@@ -94,7 +114,7 @@ const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
               id="input-username"
               type="text"
-              placeholder="TokoHijau"
+              placeholder="greenshhop"
               name="username"
             />
           </div>
@@ -113,16 +133,17 @@ const Register = () => {
           </div>
           <ButtonPrimary id="input-submit" label="Sign Up" />
           <p className="text-[16px] text-base-green mt-1 ">
-            Already have an account ?{/* <Link to="/"> */}
+            Already have an account ?
+            <Link to="/">
             <span className="text-base font-semibold cursor-pointer">
               Sign in
             </span>
-            {/* </Link> */}
+            </Link>
           </p>
         </form>
       </div>
     </div>
-  );
+  )
 };
 
 export default Register;

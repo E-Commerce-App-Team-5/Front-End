@@ -41,5 +41,5 @@ export default function UploadCardModal() {
         </div>
       </div>
     </div>
-  );
-}
+  )
+};

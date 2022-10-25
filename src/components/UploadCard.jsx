@@ -38,5 +38,5 @@ export default function UploadCard() {
         </div>
       </div>
     </div>
-  );
-}
+  )
+};

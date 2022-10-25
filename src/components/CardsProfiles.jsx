@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonSecondary } from "../components/CustomButtons";
 import { MdLogout } from "react-icons/md";
 import EditModal from "../components/EditModal";
+
 const Profiles = () => {
   return (
     <div className="w-[30%] h-[30rem] p-5 bg-white rounded-xl  shadow-xl">
@@ -36,7 +36,7 @@ const Profiles = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default Profiles;

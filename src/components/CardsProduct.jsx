@@ -1,8 +1,24 @@
 import React from "react";
-import { BsCart3 } from "react-icons/bs";
 import { ButtonCart } from "../components/CustomButtons";
-import potatos from "../assets/potatos.png";
+import { useSelector } from "react-redux";
+import Swal from "sweetalert2";
+
 const CardsProduct = (props) => {
+
+  const isLoggedin = useSelector((state) => state.data.isLoggedin);
+
+  const validasiAddCart = () => {
+    if (!isLoggedin) {
+      Swal.fire({
+        position: "center",
+        icon: "info",
+        title: "You have to login first!",
+        showConfirmButton: true,
+      });
+      return
+    }
+  }
+
   return (
     <div className=" md:w-[15rem] md:h-[19.5rem] rounded-lg border flex justify-center box-shadow-card  bg-white">
       <div className="items-center p-2">
@@ -27,14 +43,12 @@ const CardsProduct = (props) => {
             <p className="text-base-green text-xs lg:text-[16px] font-semibold ">
               Rp 40.000
             </p>
-            <ButtonCart />
+            <ButtonCart onClick={validasiAddCart}></ButtonCart>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default CardsProduct;
-
-//    <div className="border w-60 h- bg-red-400">CardsPrsdoduct</div>;

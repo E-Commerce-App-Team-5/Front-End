@@ -1,9 +1,7 @@
 import React from "react";
 import { WithRouter } from "../utils/Navigations";
-
 import rectangle from "../assets/Rectangle-1.png";
 import imghero from "../assets/Hreo-img.png";
-
 import Navbar from "../components/Layout";
 import CardsProduct from "../components/CardsProduct";
 import Footer from "../components/Footer";
@@ -32,7 +30,7 @@ function App() {
               <img
                 src={imghero}
                 alt="hero"
-                className="h-[8rem] md:h-[20rem] lg:h-[25rem]  "
+                className="h-[8rem] md:h-[20rem] lg:h-[25rem]"
               />
             </div>
           </div>
@@ -53,7 +51,7 @@ function App() {
         <Footer />
       </Navbar>
     </>
-  );
-}
+  )
+};
 
 export default WithRouter(App);

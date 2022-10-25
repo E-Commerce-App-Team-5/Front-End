@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { CiLocationOn } from 'react-icons/ci';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { CiMail } from 'react-icons/ci';
@@ -45,6 +44,6 @@ function Footer() {
         </div>
     </footer>
   )
-}
+};
 
 export default Footer;
