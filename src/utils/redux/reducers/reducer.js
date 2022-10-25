@@ -4,10 +4,10 @@ const initialState = {
     isLoggedin: false,
 };
 
-const sliceState = createSlice ({
+const sliceState = createSlice({
     name: "state",
     initialState: initialState,
-    reducer: {
+    reducers: {
         handleAuth : (state, action) => {
             state.isLoggedin = action.payload;
         },

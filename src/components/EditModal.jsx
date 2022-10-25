@@ -40,12 +40,11 @@ function EditModal() {
             className="mt-6"
             id="input-submit"
             label="Done"
-            // className="all-btn"
           />
         </div>
       </form>
     </div>
-  );
-}
+  )
+};
 
 export default EditModal;

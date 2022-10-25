@@ -1,8 +1,5 @@
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import InputPrimary from "./CustomInput";
-import { ButtonPrimary } from "../components/CustomButtons";
-import EditModal from "../components/EditModal";
 import UploadCardModal from "../components/UploadCardModal";
 
 export default function UploadedProducts() {
@@ -15,7 +12,7 @@ export default function UploadedProducts() {
             src="https://lettuceinfo.org/wp-content/uploads/2020/09/Spinach.jpg"
             alt="bayam"
           />
-          <div className=" flex flex-col md:space-y-0 md:space-y-0  md:h-full">
+          <div className=" flex flex-col md:space-y-0  md:h-full">
             <div className="flex justify-between  ">
               <p className="md:text-[25px] text-[12px] text-black md:mt-0 mt-4">
                 Earth Market
@@ -70,5 +67,5 @@ export default function UploadedProducts() {
         </div>
       </div>
     </div>
-  );
-}
+  )
+};

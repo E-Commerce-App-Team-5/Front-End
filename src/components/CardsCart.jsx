@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { BsTrash } from 'react-icons/bs';
 import { FcPlus } from 'react-icons/fc';
 import { FcMinus } from 'react-icons/fc';
-
 import { ButtonCheckout } from "../components/CustomButtons";
 
 function CardsCheckout() {

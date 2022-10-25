@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
-import InputPrimary from "./CustomInput";
 import { ButtonPrimary } from "../components/CustomButtons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { handleAuth } from "../utils/redux/reducers/reducer";
-import { useDispatch } from "react-redux";
 import axios from "axios";
 import Swal from "sweetalert2";
+import InputPrimary from "./CustomInput";
 
 const BLoggin = () => {
-  const navigate = useNavigate();
+  const isLoggedin = useSelector((state) => state.data.isLoggedin);
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,18 +37,16 @@ const BLoggin = () => {
         password: password,
       })
       .then((res) => {
-        const { token } = res.data;
-        console.log(token);
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", res.data.data.token);
+        dispatch(handleAuth(true));
         if (res?.status === 200) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "success login",
+            title: "Successfully logged in !",
             showConfirmButton: true,
           });
         }
-        dispatch(handleAuth(true));
       })
       .catch((err) => {
         if (err.response?.status === 400) {
@@ -65,11 +63,25 @@ const BLoggin = () => {
       })
       .finally(() => setLoading(false));
   };
+
+  const validasiAddCartOnNavbar = () => {
+    if (!isLoggedin) {
+      Swal.fire({
+        position: "center",
+        icon: "info",
+        title: "You have to login first!",
+        showConfirmButton: true,
+      });
+      return
+    }
+  }
+  
   return (
     <div className="flex items-center justify-end   md:ml-0 ml-1 w-16  md:w-52 ">
       <BsCart3
-        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] "
+        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] cursor-pointer"
         style={{ color: "#69C665" }}
+        onClick={validasiAddCartOnNavbar}
       />
       <label
         htmlFor="modal-login"
@@ -104,7 +116,7 @@ const BLoggin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 id="input-email"
                 type="email"
-                placeholder="contoh@gmail.com"
+                placeholder="example@mail.com"
               />
             </div>
             <div className="mt-4 my-[2rem]">
@@ -137,24 +149,29 @@ const BLoggin = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 const ALoggin = () => {
   return (
-    <div className="flex items-center justify-end  md:ml-0 ml-1 w-16  md:w-52 ">
+    <div className="flex">
+      <Link to="/Cart">
       <BsCart3
-        className="md:w-14 md:h-[28px] w-4 md:-mr-7 h-[20px]"
+        className="flex flex-end text-3xl mr-2" 
         style={{ color: "#69C665" }}
       />
-
+      </Link>
+      
+      <Link to="/Profiles">
       <img
-        className=" flex justify-center ml-1  h-[17px]   w-10 md:w-[28px] md:h-[28px] md:ml-7 bg-base text-white   items-center  rounded-full"
+        className="flex flex-end w-8 h-8 bg-base text-white   items-center  rounded-full"
         src="https://dazedimg-dazedgroup.netdna-ssl.com/592/azure/dazed-prod/1060/8/1068776.jpg"
         alt=""
       />
+      </Link>
+      
     </div>
-  );
+  )
 };
 
 export { BLoggin, ALoggin };
