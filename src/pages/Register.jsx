@@ -113,12 +113,11 @@ const Register = () => {
           </div>
           <ButtonPrimary id="input-submit" label="Sign Up" />
           <p className="text-[16px] text-base-green mt-1 ">
-            Already have an account ?
-            <Link to="/">
-              <span className="text-base font-semibold cursor-pointer">
-                Sign in
-              </span>
-            </Link>
+            Already have an account ?{/* <Link to="/"> */}
+            <span className="text-base font-semibold cursor-pointer">
+              Sign in
+            </span>
+            {/* </Link> */}
           </p>
         </form>
       </div>
