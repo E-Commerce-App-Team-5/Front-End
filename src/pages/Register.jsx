@@ -30,7 +30,7 @@ const Register = () => {
         title: "Data cannot be empty !",
         showConfirmButton: true,
       });
-      return
+      return;
     }
 
     if (username.length < 8) {
@@ -40,7 +40,7 @@ const Register = () => {
         title: "Username must be longer than 8 characters !",
         showConfirmButton: true,
       });
-      return
+      return;
     }
 
     const body = {
@@ -82,15 +82,15 @@ const Register = () => {
 
   return (
     <div className="flex justify-between ">
-      <div className="w-[50%] h-screen">
+      <div className="w-[50%] h-screen ">
         <img src={gbrEcommerce} alt="" />
       </div>
-      <div className="pr-[5rem] pt-[3rem]">
+      <div className="flex flex-col items-center pl-4 pr-2  pt-[3rem] lg:pr-[4rem] ">
         <h1 className="text-4xl font-bold text-base-green mb-7">
           Create your account
         </h1>
         <form
-          className="flex flex-col gap-4 min-w-[40%] items-center"
+          className="flex flex-col gap-4 min-w-[40%] items-center "
           onSubmit={(e) => handleRegister(e)}
         >
           <div>
@@ -135,15 +135,15 @@ const Register = () => {
           <p className="text-[16px] text-base-green mt-1 ">
             Already have an account ?
             <Link to="/">
-            <span className="text-base font-semibold cursor-pointer">
-              Sign in
-            </span>
+              <span className="text-base font-semibold cursor-pointer">
+                Sign in
+              </span>
             </Link>
           </p>
         </form>
       </div>
     </div>
-  )
+  );
 };
 
 export default Register;

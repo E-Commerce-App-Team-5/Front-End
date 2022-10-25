@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar>
-        <section className="w-full h-[28rem] ">
+        <section className="w-full h-[10rem] md:h-[23rem] lg:h-[26rem]  ">
           <div className="w-full h-full">
             <div className="absolute w-full h-[10rem] md:h-[23rem] lg:h-[26rem] md:w-full sm:w-full bg-hero z-[5]"></div>
             <img
@@ -35,8 +35,8 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="container lg:py-9 lg:pb-[3rem] ">
-          <h1 className="text-base-green font-semibold text-3xl mb-9">
+        <section className="container pb-[4rem] lg:py-9 lg:pb-[3rem] ">
+          <h1 className="text-base-green font-semibold text-[20px] lg:text-3xl mt-6 mb-4 lg:mb-9">
             Featured Products
           </h1>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10 gap-x-3">
@@ -51,7 +51,7 @@ function App() {
         <Footer />
       </Navbar>
     </>
-  )
-};
+  );
+}
 
 export default WithRouter(App);
