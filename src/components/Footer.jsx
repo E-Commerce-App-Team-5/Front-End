@@ -15,7 +15,7 @@ function Footer() {
                     </h1>
                     <a className="text-white font-quick text-xs font-semibold flex items-center justify-center md:justify-start mx-2 my-2"
                     href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3963.6322248207575!2d106.7885313!3d-6.5680169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1505c76d775%3A0xe8503eecf84be674!2sSudirman%20Central%20Busines%20District!5e0!3m2!1sid!2sid!4v1666453423596!5m2!1sid!2sid" target="_blank">
-                   <i><CiLocationOn className="fill-base mx-2"/></i><span className="url">Address : Sudirman Central Busines District, Jakarta Selatan</span></a>
+                   <i><CiLocationOn className="fill-base mx-2"/></i><span className="url">Jl. Jend. Sudirman RT.5/RW.3, Senayan, Kec. Kby. Baru, South Jakarta City, Special Capital Region of Jakarta 12190</span></a>
                     <a href="tel:+6221-908256" className="text-white font-quick text-xs font-semibold flex items-center justify-center md:justify-start mx-2 my-2">
                     <BsFillTelephoneFill className="fill-base mx-2"/>Call Us : 021 - 908256</a>
                     <a href="mailto:healtymart@gmail.com" className="text-white font-quick text-xs font-semibold flex items-center justify-center md:justify-start mx-2 my-2">
