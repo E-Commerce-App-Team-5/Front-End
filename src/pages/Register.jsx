@@ -30,7 +30,7 @@ const Register = () => {
         title: "Data cannot be empty !",
         showConfirmButton: true,
       });
-      return
+      return;
     }
 
     if (username.length < 8) {
@@ -40,7 +40,7 @@ const Register = () => {
         title: "Username must be longer than 8 characters !",
         showConfirmButton: true,
       });
-      return
+      return;
     }
 
     const body = {
@@ -55,6 +55,7 @@ const Register = () => {
         password: password,
       })
       .then((result) => {
+        // localStorage.setItem("username", username);
         if (result?.status === 201) {
           Swal.fire({
             position: "center",
@@ -135,15 +136,15 @@ const Register = () => {
           <p className="text-[16px] text-base-green mt-1 ">
             Already have an account ?
             <Link to="/">
-            <span className="text-base font-semibold cursor-pointer">
-              Sign in
-            </span>
+              <span className="text-base font-semibold cursor-pointer">
+                Sign in
+              </span>
             </Link>
           </p>
         </form>
       </div>
     </div>
-  )
+  );
 };
 
 export default Register;

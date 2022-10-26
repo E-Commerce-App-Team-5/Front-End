@@ -38,6 +38,7 @@ const BLoggin = () => {
       })
       .then((res) => {
         localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("username", res.data.data.username);
         dispatch(handleAuth(true));
         if (res?.status === 200) {
           Swal.fire({
@@ -72,16 +73,15 @@ const BLoggin = () => {
         title: "You have to login first!",
         showConfirmButton: true,
       });
-      return
+      return;
     }
-  }
-  
+  };
+
   return (
     <div className="flex items-center justify-end   md:ml-0 ml-1 w-16  md:w-52 ">
       <BsCart3
-        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] cursor-pointer"
+        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] "
         style={{ color: "#69C665" }}
-        onClick={validasiAddCartOnNavbar}
       />
       <label
         htmlFor="modal-login"
@@ -149,29 +149,28 @@ const BLoggin = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 const ALoggin = () => {
   return (
     <div className="flex">
       <Link to="/Cart">
-      <BsCart3
-        className="flex flex-end text-3xl mr-2" 
-        style={{ color: "#69C665" }}
-      />
+        <BsCart3
+          className="flex flex-end text-3xl mr-2"
+          style={{ color: "#69C665" }}
+        />
       </Link>
-      
+
       <Link to="/Profiles">
-      <img
-        className="flex flex-end w-8 h-8 bg-base text-white   items-center  rounded-full"
-        src="https://dazedimg-dazedgroup.netdna-ssl.com/592/azure/dazed-prod/1060/8/1068776.jpg"
-        alt=""
-      />
+        <img
+          className="flex flex-end w-8 h-8 bg-base text-white   items-center  rounded-full"
+          src="https://dazedimg-dazedgroup.netdna-ssl.com/592/azure/dazed-prod/1060/8/1068776.jpg"
+          alt=""
+        />
       </Link>
-      
     </div>
-  )
+  );
 };
 
 export { BLoggin, ALoggin };
