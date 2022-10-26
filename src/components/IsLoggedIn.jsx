@@ -80,8 +80,9 @@ const BLoggin = () => {
   return (
     <div className="flex items-center justify-end   md:ml-0 ml-1 w-16  md:w-52 ">
       <BsCart3
-        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] "
+        className="md:w-14 md:h-[28px] w-4 md:-mr-4 h-[20px] cursor-pointer"
         style={{ color: "#69C665" }}
+        onClick={validasiAddCartOnNavbar}
       />
       <label
         htmlFor="modal-login"
@@ -92,7 +93,7 @@ const BLoggin = () => {
 
       <input type="checkbox" id="modal-login" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative bg-white h-[35rem] w-[35%]">
+        <div className="modal-box relative bg-white w-[85%] lg:h-[35rem] lg:w-[35%]">
           <label
             htmlFor="modal-login"
             className="cursor-pointer btn-sm  absolute right-2 top-2 bg-white border-white"
@@ -157,15 +158,15 @@ const ALoggin = () => {
     <div className="flex">
       <Link to="/Cart">
         <BsCart3
-          className="flex flex-end text-3xl mr-2"
+          className="flex flex-end text-2xl lg:text-3xl mr-5 cursor-pointer "
           style={{ color: "#69C665" }}
         />
       </Link>
 
       <Link to="/Profiles">
         <img
-          className="flex flex-end w-8 h-8 bg-base text-white   items-center  rounded-full"
-          src="https://dazedimg-dazedgroup.netdna-ssl.com/592/azure/dazed-prod/1060/8/1068776.jpg"
+          className="flex flex-end w-8 h-8 bg-base text-white items-center rounded-full"
+          src="https://images.unsplash.com/photo-1518843875459-f738682238a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=842&q=80"
           alt=""
         />
       </Link>

@@ -1,7 +1,44 @@
 import React from "react";
 import { MdLogout } from "react-icons/md";
+import { Link } from "react-router-dom";
 import EditModal from "../components/EditModal";
+<<<<<<< HEAD
 const Profiles = (props) => {
+=======
+import Swal from "sweetalert2";
+
+const Profiles = () => {
+
+  const validasiUserLogout = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You will be logged out!",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, logout!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Successfully',
+          text: "You have successfully logged out!",
+          icon: 'success',
+          showCancelButton: false,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Ok'
+        }).then((res) => {
+          if(res.isConfirmed){
+            return( window.location.href = '/')
+          }
+        })
+      }else{
+        return
+      }
+    })
+  }
+
+>>>>>>> bcf9968152fa3e384c273c373b094d41cbd6f336
   return (
     <div className="w-[30%] h-[30rem] p-5 bg-white rounded-xl  shadow-xl">
       <img
@@ -21,7 +58,9 @@ const Profiles = (props) => {
         >
           Change Profile
         </label>
+        <Link onClick={() => {validasiUserLogout(); localStorage.clear()}}>
         <MdLogout size={25} className="text-base-green cursor-pointer" />
+        </Link>
       </div>
 
       <input type="checkbox" id="modal-edit" className="modal-toggle" />
