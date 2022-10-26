@@ -9,20 +9,6 @@ const Navbar = ({ children }) => {
 
   return (
     <div className="w-full h-full">
-<<<<<<< HEAD
-      <nav className=" flex  items-center  w-full bg-putih  ">
-        <div className="container flex justify-between  py-2 md:py-4 ">
-          <Link to="/">
-            <p className="text-base-green text-sm md:text-2xl font-bold font-font-quick">
-              HealtyMart
-            </p>
-          </Link>
-          <div
-            className="flex md:px-3 px-2  w-[10rem] h-[1.8rem] md:w-[350px]  md:h-[2.4rem] items-center  justify-between  rounded-md "
-            style={{ backgroundColor: "#E4E4E4" }}
-          >
-            <input
-=======
       <div className="sticky top-0 z-20">
         <nav className=" flex  items-center  w-full bg-putih  ">
           <div className="container flex justify-between  py-2 md:py-4 ">
@@ -33,7 +19,6 @@ const Navbar = ({ children }) => {
             </Link>
             <div
               className="flex md:px-3 px-2  w-[10rem] h-[1.8rem] md:w-[350px]  md:h-[2.4rem] items-center  justify-between  rounded-md "
->>>>>>> bcf9968152fa3e384c273c373b094d41cbd6f336
               style={{ backgroundColor: "#E4E4E4" }}
             >
               <input
@@ -49,15 +34,8 @@ const Navbar = ({ children }) => {
             </div>
             <div className="flex">{isLoggedin ? <ALoggin /> : <BLoggin />}</div>
           </div>
-<<<<<<< HEAD
-          <div className="flex">{isLoggedin ? <ALoggin /> : <BLoggin />}</div>
-        </div>
-      </nav>
-
-=======
         </nav>
       </div>
->>>>>>> bcf9968152fa3e384c273c373b094d41cbd6f336
       <div className="w-full h-full overflow-auto ">{children}</div>
     </div>
   );
