@@ -55,6 +55,7 @@ const Register = () => {
         password: password,
       })
       .then((result) => {
+        // localStorage.setItem("username", username);
         if (result?.status === 201) {
           Swal.fire({
             position: "center",

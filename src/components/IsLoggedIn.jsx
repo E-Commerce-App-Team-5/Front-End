@@ -38,6 +38,7 @@ const BLoggin = () => {
       })
       .then((res) => {
         localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("username", res.data.data.username);
         dispatch(handleAuth(true));
         if (res?.status === 200) {
           Swal.fire({
