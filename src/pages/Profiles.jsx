@@ -6,6 +6,7 @@ import CardsProfiles from "../components/CardsProfiles";
 import axios from "axios";
 // import { apiRequest } from "utils/apiRequest";
 import { apiRequest } from "../utils/apiRequest";
+import sellHistory from "../components/SellHistory";
 
 import React, { useEffect, useState } from "react";
 
@@ -74,6 +75,52 @@ export default function Profiles() {
       })
       .finally(() => getUser());
   };
+
+  // -------------------------edit Profile
+  //  const editData = (e) => {
+  //   e.preventDefault();
+  //   const data = { name: name, email: email };
+  //   axios
+  //     .put("http://18.142.161.140/users", data, {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     })
+  //     .then(() => getData())
+  //     .catch((error) => console.log(error));
+  // };
+
+  //----------------------Logout
+  // const handleLogout = () => {
+  //   setToken("0");
+  //   localStorage.removeItem("token");
+  //   navigate("/");
+  //   alert("you have been log out.....");
+  // };
+
+  // -----------------------Delete Account
+  // const handleDeleteAccount = () => {
+  //   var axios = require("axios");
+
+  //   var config = {
+  //     method: "delete",
+  //     url: "http://18.142.161.140/users",
+  //     headers: {
+  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //     },
+  //   };
+
+  // axios(config)
+  //   .then(function (response) {
+  //     setToken("0");
+  //     localStorage.removeItem("token");
+  //     navigate("/");
+  //     alert("your accout has been deleted");
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
 
   return (
     <div>
