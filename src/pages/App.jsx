@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { WithRouter } from "../utils/Navigations";
 import rectangle from "../assets/Rectangle-1.png";
 import imghero from "../assets/Hreo-img.png";
 import Navbar from "../components/Layout";
 import CardsProduct from "../components/CardsProduct";
 import Footer from "../components/Footer";
-
+import axios from "axios";
 function App() {
+  const [dataProduct, setDataProduct] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+  const fetchProduct = () => {
+    setLoading(true);
+    axios
+      .get(`https://ecommerce-alta.online/products`)
+      .then((res) => {
+        setDataProduct(res.data.data);
+      })
+      .catch((err) => {
+        if (err.response?.status === 400) {
+          Swal.fire({
+            icon: "error",
+            text: "An invalid client request",
+          });
+        } else if (err.response?.status === 500) {
+          Swal.fire({
+            icon: "error",
+            text: "There is problem on server.",
+          });
+        }
+      })
+      .finally(() => setLoading(false));
+  };
   return (
     <>
       <Navbar>
@@ -40,12 +68,27 @@ function App() {
             Featured Products
           </h1>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10 gap-x-3">
+            {loading ? (
+              <p>loadingg...</p>
+            ) : (
+              dataProduct.map((item) => (
+                <CardsProduct
+                  key={item.id}
+                  toko={item.nama_toko}
+                  product={item.product_name}
+                  detail={item.product_detail}
+                  image={item.product_picture}
+                  price={item.price}
+                  stock={item.product_qty}
+                />
+              ))
+            )}
+
+            {/* <CardsProduct />
             <CardsProduct />
             <CardsProduct />
             <CardsProduct />
-            <CardsProduct />
-            <CardsProduct />
-            <CardsProduct />
+            <CardsProduct /> */}
           </div>
         </section>
         <Footer />
