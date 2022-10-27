@@ -6,6 +6,7 @@ import Navbar from "../components/Layout";
 import CardsProduct from "../components/CardsProduct";
 import Footer from "../components/Footer";
 import axios from "axios";
+
 function App() {
   const [dataProduct, setDataProduct] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   useEffect(() => {
     fetchProduct();
   }, []);
+
   const fetchProduct = () => {
     setLoading(true);
     axios
@@ -35,6 +37,7 @@ function App() {
       })
       .finally(() => setLoading(false));
   };
+
   return (
     <>
       <Navbar>
@@ -73,7 +76,8 @@ function App() {
             ) : (
               dataProduct.map((item) => (
                 <CardsProduct
-                  key={item.id}
+                  key={item.id_product}
+                  id_product={item.id_product}
                   toko={item.nama_toko}
                   product={item.product_name}
                   detail={item.product_detail}
@@ -83,12 +87,6 @@ function App() {
                 />
               ))
             )}
-
-            {/* <CardsProduct />
-            <CardsProduct />
-            <CardsProduct />
-            <CardsProduct />
-            <CardsProduct /> */}
           </div>
         </section>
         <Footer />

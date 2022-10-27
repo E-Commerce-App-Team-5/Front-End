@@ -23,7 +23,7 @@ const ButtonCart = (props) => {
       className="all-btn w-[5rem] h-[2rem] text-xs lg:text-sm lg:w-[6rem] lg:h-[2.5rem] bg-base font-medium rounded-md text-putih  justify-center flex items-center"
       {...props}
     >
-      <BsCart3 size={18} className="mr-2" {...props} /> Add
+      <BsCart3 size={18} className="mr-2"/> Add
     </button>
   );
 };

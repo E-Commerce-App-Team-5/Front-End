@@ -14,6 +14,9 @@ const sliceState = createSlice({
         handleUser: (state, action) => {
             state.Users = action.payload;
         },
+        addToCart: (state, action) => {
+            state.Cart = action.payload;
+        },
     },
 });
 
@@ -21,5 +24,5 @@ const reducer = {
     state: sliceState.reducer,
 };
 
-export const { handleAuth, handleUser } = sliceState.actions;
+export const { handleAuth, handleUser, addToCart } = sliceState.actions;
 export default reducer;

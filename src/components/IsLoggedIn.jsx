@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
 import { ButtonPrimary } from "../components/CustomButtons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { handleAuth } from "../utils/redux/reducers/reducer";
+import { handleAuth,handleUser } from "../utils/redux/reducers/reducer";
 import axios from "axios";
 import Swal from "sweetalert2";
 import InputPrimary from "./CustomInput";
@@ -15,6 +15,19 @@ const BLoggin = () => {
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
+  
+
+  useEffect(() => {
+    const getToken = localStorage.getItem("token");
+    if (getToken) {
+      dispatch(handleAuth(true));
+    } else {
+      dispatch(handleAuth(false));
+    }
+    axios.defaults.headers.common["Authorization"] = getToken
+      ? `Bearer ${getToken}`
+      : "";
+  }, [isLoggedin]);
 
   useEffect(() => {
     if (email && password) {
@@ -37,9 +50,7 @@ const BLoggin = () => {
         password: password,
       })
       .then((res) => {
-        localStorage.setItem("token", res.data.data.token);
-        localStorage.setItem("username", res.data.data.username);
-        dispatch(handleAuth(true));
+
         if (res?.status === 200) {
           Swal.fire({
             position: "center",
@@ -47,6 +58,9 @@ const BLoggin = () => {
             title: "Successfully logged in !",
             showConfirmButton: true,
           });
+          localStorage.setItem("token", res.data.data.token);
+          dispatch(handleAuth(true));
+          dispatch(handleUser(res.data.data));
         }
       })
       .catch((err) => {
@@ -153,15 +167,70 @@ const BLoggin = () => {
   );
 };
 
-const ALoggin = () => {
+const ALoggin = (props) => {
+  const isLoggedin = useSelector((state) => state.data.isLoggedin);
+  const navigate = useNavigate();
+
+  const [myCart, setMyCart] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      fetchMyCart()
+    }, 700);
+  }, []);
+
+  const fetchMyCart = () => {
+    if(isLoggedin){
+      axios
+      .get(`https://ecommerce-alta.online/cart`)
+      .then((res) => {
+        if(res.data.data !== null){
+          setMyCart(res.data.data.length);  
+        }
+      })
+      .catch((err) => {
+        if (err.response?.status === 400) {
+          Swal.fire({
+            icon: "error",
+            text: "An invalid client request",
+          });
+        } else if (err.response?.status === 500) {
+          Swal.fire({
+            icon: "error",
+            text: "There is problem on server.",
+          });
+        }
+      })
+      .finally();
+    }else{
+      return
+    }
+  };
+
+  const validasiEmptyCartOnNavbar = () => {
+    if (isLoggedin && myCart === 0) {
+      Swal.fire({
+        position: "center",
+        icon: "info",
+        title: "The shopping cart is still empty. Please shop first!",
+        showConfirmButton: true,
+      });
+    } else{
+      navigate("/Cart");
+    }
+  };
+
   return (
     <div className="flex">
-      <Link to="/Cart">
+      <div className="absolute top-2 ml-6 badge badge-warning badge-sm font-bold font-font-quick">{myCart}</div>
+
         <BsCart3
           className="flex flex-end text-2xl lg:text-3xl mr-5 cursor-pointer "
           style={{ color: "#69C665" }}
+          onClick={() => {
+            validasiEmptyCartOnNavbar();
+          }}
         />
-      </Link>
 
       <Link to="/Profiles">
         <img

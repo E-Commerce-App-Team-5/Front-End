@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SlMagnifier } from "react-icons/sl";
 import { BLoggin, ALoggin } from "./IsLoggedIn";
 import { useSelector } from "react-redux";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ children }) => {
   const isLoggedin = useSelector((state) => state.data.isLoggedin);
-
+  
   return (
     <div className="w-full h-full">
       <div className="sticky top-0 z-20">
@@ -32,7 +32,8 @@ const Navbar = ({ children }) => {
                 <SlMagnifier className="md:w-6 w-[10px]" />
               </button>
             </div>
-            <div className="flex">{isLoggedin ? <ALoggin /> : <BLoggin />}</div>
+            <div className="flex">{isLoggedin ? 
+                <ALoggin /> : <BLoggin />}</div>
           </div>
         </nav>
       </div>
