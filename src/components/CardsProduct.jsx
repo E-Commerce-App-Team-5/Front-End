@@ -7,9 +7,9 @@ import axios from "axios";
 const CardsProduct = (props) => {
   const isLoggedin = useSelector((state) => state.data.isLoggedin);
   const [id_product, setId_product] = useState("");
-  const [product_qty, setProduct_qty] = useState(""); 
+  const [product_qty, setProduct_qty] = useState("");
 
-  function validasiAddCart(item){
+  function validasiAddCart(item) {
     if (!isLoggedin) {
       Swal.fire({
         position: "center",
@@ -17,38 +17,36 @@ const CardsProduct = (props) => {
         title: "You have to login first!",
         showConfirmButton: true,
       });
-      return
-    }else{
+      return;
+    } else {
       const body = {
         id_product: item.id_product,
         product_qty: 1,
       };
       axios
-      .post(`https://ecommerce-alta.online/cart`, 
-        body
-      )
-      .then((res) => {
+        .post(`https://ecommerce-alta.online/cart`, body)
+        .then((res) => {
           Swal.fire({
-          position: "center",
-          icon: "info",
-          title: "Produk berhasil di tambahkan!",
-          showConfirmButton: true,
+            position: "center",
+            icon: "info",
+            title: "Produk berhasil di tambahkan!",
+            showConfirmButton: true,
           });
-      })
-      .catch((err) => {
-        if (err.response?.status === 400) {
-          Swal.fire({
-            icon: "error",
-            text: "An invalid client request",
-          });
-        } else if (err.response?.status === 500) {
-          Swal.fire({
-            icon: "error",
-            text: err.response?.data.message,
-          });
-        }
-      })
-      .finally();
+        })
+        .catch((err) => {
+          if (err.response?.status === 400) {
+            Swal.fire({
+              icon: "error",
+              text: "An invalid client request",
+            });
+          } else if (err.response?.status === 500) {
+            Swal.fire({
+              icon: "error",
+              text: err.response?.data.message,
+            });
+          }
+        })
+        .finally();
     }
   }
 
@@ -77,7 +75,10 @@ const CardsProduct = (props) => {
             <p className="text-base-green text-xs lg:text-[16px] font-semibold ">
               {props.price}
             </p>
-            <ButtonCart key={props.id_product} onClick={() => validasiAddCart(props)}></ButtonCart>
+            <ButtonCart
+              key={props.id_product}
+              onClick={() => validasiAddCart(props)}
+            ></ButtonCart>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Navbar from "../components/Layout";
 import CardsProduct from "../components/CardsProduct";
 import Footer from "../components/Footer";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function App() {
   const [dataProduct, setDataProduct] = useState([]);
