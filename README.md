@@ -1,7 +1,8 @@
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Indexasas](https://user-images.githubusercontent.com/59137289/198376291-bb8f9b41-5c63-4eda-941d-8768c414079b.png)
 
 Healthmart is an online store for selling or buying vegetables and fruits that are produced directly from Indonesian nature from various regions. Users can buy or sell their crops directly. The results of these plants such as vegetables or fruits are ensured to be fresh and natural without artificial preservative.
  
@@ -21,10 +22,15 @@ https://www.figma.com/file/OFX3VmgBXcVkHgZANWBtfc/DESIGN-UI?node-id=46%3A654
 Frameworks and libraries used in this project 
 
 
-* [![React][React.js]][React-url]
-* [![Vite][vitejs.dev]][Vite-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Tailwind][tailwindcss.com]][Tailwind-url]
+<p>
+
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-0769AD?style=for-the-badge&logo=jquery&logoColor=white" />  
+  <img src="https://img.shields.io/badge/Figma-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
+
+</p>
+
 
 
 
@@ -65,11 +71,11 @@ Your app is ready to be deployed!
 
 
 
-<!-- API documentation:-->
+## API documentation:
 With support by Golang as BackEnd
 https://app.swaggerhub.com/apis-docs/khalidrianda/Ecommerce/1.0.0
 
-<!-- Contributing -->
+## Contributing
 
-@aditiaz @radenmasabdul
+@aditiaz @radenmasabdul @Annisaard
 
