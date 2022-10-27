@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ButtonCart } from "../components/CustomButtons";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const CardsProduct = (props) => {
   const isLoggedin = useSelector((state) => state.data.isLoggedin);
+  const [id_product, setId_product] = useState("");
+  const [product_qty, setProduct_qty] = useState(""); 
 
-  const validasiAddCart = () => {
+  function validasiAddCart(item){
     if (!isLoggedin) {
       Swal.fire({
         position: "center",
@@ -14,9 +17,40 @@ const CardsProduct = (props) => {
         title: "You have to login first!",
         showConfirmButton: true,
       });
-      return;
+      return
+    }else{
+      const body = {
+        id_product: item.id_product,
+        product_qty: 1,
+      };
+      axios
+      .post(`https://ecommerce-alta.online/cart`, 
+        body
+      )
+      .then((res) => {
+          Swal.fire({
+          position: "center",
+          icon: "info",
+          title: "Produk berhasil di tambahkan!",
+          showConfirmButton: true,
+          });
+      })
+      .catch((err) => {
+        if (err.response?.status === 400) {
+          Swal.fire({
+            icon: "error",
+            text: "An invalid client request",
+          });
+        } else if (err.response?.status === 500) {
+          Swal.fire({
+            icon: "error",
+            text: err.response?.data.message,
+          });
+        }
+      })
+      .finally();
     }
-  };
+  }
 
   return (
     <div className=" md:w-[15rem] md:h-[19.5rem] rounded-lg border flex justify-center box-shadow-card  bg-white">
@@ -43,7 +77,7 @@ const CardsProduct = (props) => {
             <p className="text-base-green text-xs lg:text-[16px] font-semibold ">
               {props.price}
             </p>
-            <ButtonCart onClick={validasiAddCart}></ButtonCart>
+            <ButtonCart key={props.id_product} onClick={() => validasiAddCart(props)}></ButtonCart>
           </div>
         </div>
       </div>
