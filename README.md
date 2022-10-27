@@ -2,7 +2,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Indexasas](https://user-images.githubusercontent.com/59137289/198376291-bb8f9b41-5c63-4eda-941d-8768c414079b.png)
+![Indexasas](https://user-images.githubusercontent.com/59137289/198380106-37994690-0198-4d21-a8ef-21df9868b536.png)
 
 Healthmart is an online store for selling or buying vegetables and fruits that are produced directly from Indonesian nature from various regions. Users can buy or sell their crops directly. The results of these plants such as vegetables or fruits are ensured to be fresh and natural without artificial preservative.
  
