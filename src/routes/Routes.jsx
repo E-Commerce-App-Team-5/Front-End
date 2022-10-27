@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-
 import Home from "../pages/App";
 import Register from "../pages/Register";
 import Profiles from "../pages/Profiles";

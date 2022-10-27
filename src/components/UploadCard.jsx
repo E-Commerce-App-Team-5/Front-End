@@ -3,6 +3,7 @@ import { ButtonSecondary } from "../components/CustomButtons";
 import { BsImage } from "react-icons/bs";
 import { apiRequest } from "../utils/apiRequest";
 import Swal from "sweetalert2";
+
 export default function UploadCard(props) {
   const [objSubmit, setObjSubmit] = useState("");
   const [image, setImage] = useState("");
@@ -32,9 +33,6 @@ export default function UploadCard(props) {
           title: "Success Update !",
           showConfirmButton: true,
         });
-        // const { message } = res.data;
-        // alert(message);
-        // setObjSubmit({});
       })
       .catch((err) => {
         const { data } = err.response;

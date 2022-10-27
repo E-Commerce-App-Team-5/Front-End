@@ -6,7 +6,6 @@ import CardsProfiles from "../components/CardsProfiles";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { CardBuy, CardSell } from "../components/CardSell";
-// import sellHistory from "../components/SellHistory";
 
 import React, { useEffect, useState } from "react";
 
@@ -35,7 +34,6 @@ export default function Profiles() {
       const { username, email } = response.data.data;
       setUsername(username);
       setEmail(email);
-      // setImage()
     } catch (error) {
       console.log(error);
     }
