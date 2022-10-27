@@ -4,25 +4,14 @@ import UploadCard from "../components/UploadCard";
 import UploadedProducts from "../components/UploadedProducts";
 import CardsProfiles from "../components/CardsProfiles";
 import axios from "axios";
-// import { apiRequest } from "utils/apiRequest";
-import { apiRequest } from "../utils/apiRequest";
+
 import sellHistory from "../components/SellHistory";
 
 import React, { useEffect, useState } from "react";
 
 export default function Profiles() {
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [objSubmit, setObjSubmit] = useState("");
-  const [image, setImage] = useState("");
-  console.log(image);
-  const [productName, setProductName] = useState("");
-  const [productDesc, setProductDesc] = useState("");
-  const [price, setPrice] = useState("");
-  // const [disabled, setDisabled] = useState(true);
-  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getUser();
@@ -48,32 +37,6 @@ export default function Profiles() {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleSubmit = async (e) => {
-    // setLoading(true);
-    e.preventDefault();
-
-    const formData = new FormData();
-    for (const key in objSubmit) {
-      formData.append(key, objSubmit[key]);
-    }
-    apiRequest(
-      "https://ecommerce-alta.online/products",
-      "post",
-      objSubmit,
-      "multipart/form-data"
-    )
-      .then((res) => {
-        const { message } = res.data;
-        alert(message);
-        setObjSubmit({});
-      })
-      .catch((err) => {
-        const { data } = err.response;
-        alert(data.message);
-      })
-      .finally(() => getUser());
   };
 
   // -------------------------edit Profile
@@ -130,28 +93,7 @@ export default function Profiles() {
           <CardsProfiles email={email} username={username} />
 
           <div className="flex flex-col space-y-7 md:mb-10">
-            {/* onSubmit={(e) => handlePost(e)} */}
-            <form onSubmit={(e) => handleSubmit(e)}>
-              <UploadCard
-                imgPrev={image}
-                capValue={productName}
-                onChangeCaption={(e) => setProductName(e.target.capValue)}
-                descValue={productDesc}
-                onChangeDesc={
-                  (e) => setProductDesc(e.target.descValue)
-                  // handleChange(e.target.value, "product_detail")
-                }
-                priceVal={price}
-                onChangePrice={(e) =>
-                  // handleChange(e.target.value, "price").
-                  setPrice(e.target.descValue)
-                }
-                onChangeImg={(e) => {
-                  setImage(URL.createObjectURL(e.target.files[0]));
-                  handleChange(e.target.files[0], "product_picture");
-                }}
-              />
-            </form>
+            <UploadCard />
 
             <UploadedProducts className="mt-[4rem]" />
           </div>
