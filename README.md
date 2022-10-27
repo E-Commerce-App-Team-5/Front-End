@@ -7,12 +7,7 @@
 Healthmart is an online store for selling or buying vegetables and fruits that are produced directly from Indonesian nature from various regions. Users can buy or sell their crops directly. The results of these plants such as vegetables or fruits are ensured to be fresh and natural without artificial preservative.
  
 ## Access our website at https://healtymart-brown.vercel.app/
-Let's see for how to register or join us:
 
-* On the index page, there will be a display of vegetable and fruit products available from sellers
-* You can't add products to cart if you haven't joined us or registered
-* Please register first, by pressing the login button in the upper right corner. Then you will be redirected to the login page, and select Sign Up
-* Fill in the email data, username, and password. If it is already
 
 This project layout used with Figma.
 https://www.figma.com/file/OFX3VmgBXcVkHgZANWBtfc/DESIGN-UI?node-id=46%3A654
@@ -28,7 +23,7 @@ Frameworks and libraries used in this project
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-0769AD?style=for-the-badge&logo=vite&logoColor=white" />  
   <img src="https://img.shields.io/badge/Figma-FF2D20?style=for-the-badge&logo=figma&logoColor=white" />
-
+ <img src="https://img.shields.io/badge/DaisyUi-FFFF00?style=for-the-badge&logo=daisyui&logoColor=white" />
 </p>
 
 
