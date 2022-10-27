@@ -35,7 +35,7 @@ const Profiles = (props) => {
   };
 
   return (
-    <div className="w-[30%] h-[30rem] p-5 bg-white rounded-xl  shadow-xl">
+    <div className="md:w-[20rem] h-[30rem] p-5 bg-white rounded-xl  shadow-xl">
       <img
         src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
         className="object-cover h-[18rem] w-[20rem] rounded-lg "
