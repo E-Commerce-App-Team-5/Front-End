@@ -4,7 +4,6 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
 import logo from "../assets/Filled_outline.png";
-
 function Footer() {
   return (
     <footer className="w-full text-center lg:text-left bg-base-green">
