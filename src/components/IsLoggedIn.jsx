@@ -44,7 +44,7 @@ const BLoggin = () => {
       password,
     };
     axios
-      .post(`https://ecommerce-alta.online/login`, {
+      .post(`https://my-ecommerce.xyz/login`, {
         email: email,
         password: password,
       })
