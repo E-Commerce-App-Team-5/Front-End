@@ -7,7 +7,7 @@ import axios from "axios";
 function UploadedProducts(props) {
   const deleteProduct = (id_product) => {
     axios
-      .delete(`https://ecommerce-alta.online/products/${id_product}`)
+      .delete(`https://my-ecommerce.xyz/products/${id_product}`)
       .then(() => {
         Swal.fire({
           title: "Successfully",

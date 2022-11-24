@@ -18,7 +18,7 @@ export default function UploadCard(props) {
       formData.append(key, objSubmit[key]);
     }
     apiRequest(
-      "https://ecommerce-alta.online/products",
+      "https://my-ecommerce.xyz/products",
       "post",
       formData,
       "multipart/form-data"

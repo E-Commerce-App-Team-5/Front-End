@@ -24,7 +24,7 @@ const CardsProduct = (props) => {
         product_qty: 1,
       };
       axios
-        .post(`https://ecommerce-alta.online/cart`, body)
+        .post(`https://my-ecommerce.xyz/cart`, body)
         .then((res) => {
           Swal.fire({
             position: "center",

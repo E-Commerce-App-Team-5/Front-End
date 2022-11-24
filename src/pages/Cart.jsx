@@ -16,7 +16,7 @@ function Cart() {
   }, []);
   const fetchCart = () => {
     axios
-      .get(`https://ecommerce-alta.online/cart`)
+      .get(`https://my-ecommerce.xyz/cart`)
       .then((res) => {
         setDataCart(res.data.data);
       })

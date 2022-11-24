@@ -181,7 +181,7 @@ const ALoggin = (props) => {
   const fetchMyCart = () => {
     if (isLoggedin) {
       axios
-        .get(`https://ecommerce-alta.online/cart`)
+        .get(`https://my-ecommerce.xyz/cart`)
         .then((res) => {
           if (res.data.data !== null) {
             setMyCart(res.data.data.length);
