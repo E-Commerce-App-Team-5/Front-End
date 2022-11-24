@@ -49,13 +49,12 @@ const Register = () => {
       password,
     };
     axios
-      .post(`https://ecommerce-alta.online/users`, {
+      .post(`https://my-ecommerce.xyz/users`, {
         username: username,
         email: email,
         password: password,
       })
       .then((result) => {
-        // localStorage.setItem("username", username);
         if (result?.status === 201) {
           Swal.fire({
             position: "center",
