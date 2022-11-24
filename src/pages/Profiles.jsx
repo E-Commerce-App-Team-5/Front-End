@@ -22,7 +22,7 @@ export default function Profiles() {
   const getUser = async (e) => {
     var requestOptions = {
       method: "get",
-      url: `https://ecommerce-alta.online/users?username=${localStorage.getItem(
+      url: `https://my-ecommerce.xyz/users?username=${localStorage.getItem(
         "username"
       )}`,
       headers: {
@@ -42,7 +42,7 @@ export default function Profiles() {
     setLoading(true);
     axios
       .get(
-        `https://ecommerce-alta.online/users?username=${localStorage.getItem(
+        `https://my-ecommerce.xyz/users?username=${localStorage.getItem(
           "username"
         )}`
       )

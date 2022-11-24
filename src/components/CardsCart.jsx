@@ -18,18 +18,16 @@ function CardsCheckout(props) {
       confirmButtonText: "Yes, delete!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete(`https://ecommerce-alta.online/cart/${id_cart}`)
-          .then((res) => {
-            Swal.fire({
-              title: "Successfully",
-              text: "You have successfully deleted your shopping cart!",
-              icon: "success",
-              showCancelButton: false,
-              confirmButtonColor: "#3085d6",
-              confirmButtonText: "Ok",
-            });
+        axios.delete(`https://my-ecommerce.xyz/cart/${id_cart}`).then((res) => {
+          Swal.fire({
+            title: "Successfully",
+            text: "You have successfully deleted your shopping cart!",
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Ok",
           });
+        });
       } else {
         return;
       }

@@ -19,7 +19,7 @@ function App() {
   const fetchProduct = () => {
     setLoading(true);
     axios
-      .get(`https://ecommerce-alta.online/products`)
+      .get(`https://my-ecommerce.xyz/products`)
       .then((res) => {
         setDataProduct(res.data.data);
       })
